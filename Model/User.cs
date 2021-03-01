@@ -9,5 +9,7 @@ namespace Home_Sewa.Model
     {
         public int UserId { get; set; }
         public string FullName { get; set; }
+
+        public int MyProperty { get; set; }
     }
 }

@@ -15,5 +15,11 @@ namespace Home_Sewa.Data
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Vendor> Vendors { get; set; }
+        public DbSet<Offer> Offers { get; set; }
+        public DbSet<Problem> Problems { get; set; }
+        public DbSet<Favourite>Favourites { get; set; }
+        public DbSet<Booking>Bookings { get; set; }
     }
 }

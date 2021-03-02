@@ -16,26 +16,47 @@ namespace Home_Sewa.Service
             _dbContext = dbContext;
         }
 
-        internal object AuthorizeCustomer(AuthModel authModel)
+        internal object AuthorizeUser(AuthModel authModel)
         {
             try
             {
-                var valid_user = _dbContext.Customers
+                var valid_user = _dbContext.Users
                     .Where(c => c.Username == authModel.Username && c.Password == authModel.Password)
                     .Select(cus => new
                     {
-                        cus.CustomerId,
+                        cus.UserId,
                         cus.Username,
-                        cus.Name,
-                        cus.PhoneNo,
-                        cus.Gender,
-                        cus.Address,
-                        cus.ProfileImage
+                        cus.UserType,
                     }).FirstOrDefault();
 
                 if (valid_user != null)
                 {
-                    return Response.ApiResonse(true, "Logged in successful.", valid_user);
+                    dynamic user_details;
+                    if (valid_user.UserType == Constants.CUSTOMER)
+                    {
+                        user_details = _dbContext.Customers.Select(c => new
+                        {
+                            c.User.Username,
+                            c.UserId,
+                            c.Name,
+                            c.PhoneNo,
+                            c.Address,
+                            c.User.UserType
+                        }).Where(u => u.UserId == valid_user.UserId).FirstOrDefault();
+                    }
+                    else
+                    {
+                        user_details = _dbContext.Vendors.Select(c => new
+                        {
+                            c.User.Username,
+                            c.UserId,
+                            c.Name,
+                            c.PhoneNo,
+                            c.Address,
+                            c.User.UserType
+                        }).Where(u => u.UserId == valid_user.UserId).FirstOrDefault();
+                    }
+                    return Response.ApiResonse(true, "Logged in successful.", user_details);
                 }
                 else
                 {
@@ -43,38 +64,6 @@ namespace Home_Sewa.Service
                 }
             }
             catch (Exception ex)
-            {
-                return Response.ApiResonse(false, "Something went wrong", ex.Message);
-            }
-        }
-
-        internal object AuthorizeVendor(AuthModel authModel)
-        {
-            try
-            {
-                var valid_user = _dbContext.Vendors
-                                    .Where(c => c.Username == authModel.Username && c.Password == authModel.Password)
-                                    .Select(cus => new
-                                    {
-                                        cus.VendorId,
-                                        cus.Username,
-                                        cus.Name,
-                                        cus.PhoneNo,
-                                        cus.Gender,
-                                        cus.Address,
-                                        cus.ProfileImage
-                                    }).FirstOrDefault();
-
-                if (valid_user != null)
-                {
-                    return Response.ApiResonse(true, "Logged in successful.", valid_user);
-                }
-                else
-                {
-                    return Response.ApiResonse(false, "Invalid Creadentials", null);
-                }
-            }
-            catch(Exception ex)
             {
                 return Response.ApiResonse(false, "Something went wrong", ex.Message);
             }

@@ -84,24 +84,21 @@ namespace Home_Sewa.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("PhoneNo")
                         .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("ProfileImage")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("CustomerId");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Customers");
                 });
@@ -204,11 +201,14 @@ namespace Home_Sewa.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("FullName")
+                    b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("MyProperty")
-                        .HasColumnType("int");
+                    b.Property<string>("UserType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId");
 
@@ -234,10 +234,6 @@ namespace Home_Sewa.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("PhoneNo")
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
@@ -245,11 +241,13 @@ namespace Home_Sewa.Migrations
                     b.Property<string>("ProfileImage")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("VendorId");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Vendors");
                 });
@@ -278,21 +276,32 @@ namespace Home_Sewa.Migrations
 
             modelBuilder.Entity("Home_Sewa.Model.Booking", b =>
                 {
-                    b.HasOne("Home_Sewa.Model.Customer", "Customers")
+                    b.HasOne("Home_Sewa.Model.Customer", "Customer")
                         .WithMany("Bookings")
                         .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
 
-                    b.HasOne("Home_Sewa.Model.Vendor", "Vendors")
+                    b.HasOne("Home_Sewa.Model.Vendor", "Vendor")
                         .WithMany("Bookings")
                         .HasForeignKey("VendorId")
+                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("Vendor");
+                });
+
+            modelBuilder.Entity("Home_Sewa.Model.Customer", b =>
+                {
+                    b.HasOne("Home_Sewa.Model.User", "User")
+                        .WithOne("Customer")
+                        .HasForeignKey("Home_Sewa.Model.Customer", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Customers");
-
-                    b.Navigation("Vendors");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Home_Sewa.Model.Favourite", b =>
@@ -300,13 +309,13 @@ namespace Home_Sewa.Migrations
                     b.HasOne("Home_Sewa.Model.Customer", "Customer")
                         .WithMany("Favourites")
                         .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
 
                     b.HasOne("Home_Sewa.Model.Vendor", "Vendor")
                         .WithMany("Favourites")
                         .HasForeignKey("VendorId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
 
                     b.Navigation("Customer");
@@ -334,6 +343,17 @@ namespace Home_Sewa.Migrations
                         .IsRequired();
 
                     b.Navigation("Customers");
+                });
+
+            modelBuilder.Entity("Home_Sewa.Model.Vendor", b =>
+                {
+                    b.HasOne("Home_Sewa.Model.User", "User")
+                        .WithOne("Vendor")
+                        .HasForeignKey("Home_Sewa.Model.Vendor", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Home_Sewa.Model.VendorProfession", b =>
@@ -367,6 +387,13 @@ namespace Home_Sewa.Migrations
             modelBuilder.Entity("Home_Sewa.Model.Profession", b =>
                 {
                     b.Navigation("VendorProfessions");
+                });
+
+            modelBuilder.Entity("Home_Sewa.Model.User", b =>
+                {
+                    b.Navigation("Customer");
+
+                    b.Navigation("Vendor");
                 });
 
             modelBuilder.Entity("Home_Sewa.Model.Vendor", b =>

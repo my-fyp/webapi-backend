@@ -1,9 +1,5 @@
 ﻿using Home_Sewa.Model;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Home_Sewa.Data
 {
@@ -19,7 +15,38 @@ namespace Home_Sewa.Data
         public DbSet<Vendor> Vendors { get; set; }
         public DbSet<Offer> Offers { get; set; }
         public DbSet<Problem> Problems { get; set; }
-        public DbSet<Favourite>Favourites { get; set; }
-        public DbSet<Booking>Bookings { get; set; }
+        public DbSet<Favourite> Favourites { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder _modelBuilder)
+        {
+            _modelBuilder.Entity<Booking>()
+                .HasOne(b => b.Vendor)
+                .WithMany(v => v.Bookings)
+                .IsRequired()
+                .HasForeignKey(b => b.VendorId)
+                .OnDelete(DeleteBehavior.ClientCascade);
+
+            _modelBuilder.Entity<Booking>()
+                .HasOne(b => b.Customer)
+                .WithMany(c => c.Bookings)
+                .IsRequired()
+                .HasForeignKey(b => b.CustomerId)
+                .OnDelete(DeleteBehavior.ClientCascade);
+            
+            _modelBuilder.Entity<Favourite>()
+                .HasOne(b => b.Vendor)
+                .WithMany(v => v.Favourites)
+                .IsRequired()
+                .HasForeignKey(b => b.VendorId)
+                .OnDelete(DeleteBehavior.ClientCascade);
+
+            _modelBuilder.Entity<Favourite>()
+                .HasOne(b => b.Customer)
+                .WithMany(c => c.Favourites)
+                .IsRequired()
+                .HasForeignKey(b => b.CustomerId)
+                .OnDelete(DeleteBehavior.ClientCascade);
+        }
     }
 }

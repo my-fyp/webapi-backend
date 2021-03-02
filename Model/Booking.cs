@@ -24,8 +24,8 @@ namespace Home_Sewa.Model
         public bool CompletedStatus { get; set; }
         public bool PaidStatus { get; set; }
 
-        public virtual Customer Customers { get; set; }
-        public virtual Vendor Vendors { get; set; }
+        public virtual Customer Customer { get; set; }
+        public virtual Vendor Vendor { get; set; }
 
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,10 +11,8 @@ namespace Home_Sewa.Model
     {
         [Key]
         public int CustomerId { get; set; }
-        [Required]
-        public string Username { get; set; }
-        [Required]
-        public string Password { get; set; }
+        [ForeignKey("User")]
+        public int UserId { get; set; }
         [Required]
         public string Name { get; set; }
         [Required]
@@ -23,11 +22,10 @@ namespace Home_Sewa.Model
         [StringLength(10)]
         [Required]
         public string PhoneNo { get; set; }
-        [Required]
         public string ProfileImage { get; set; }
+        public virtual User User { get; set; }
         public virtual ICollection<Problem> Problems { get; set; }
         public virtual ICollection<Favourite> Favourites { get; set; }
         public virtual ICollection<Booking> Bookings { get; set; }
-
     }
 }

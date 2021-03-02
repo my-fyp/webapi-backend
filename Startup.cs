@@ -30,7 +30,7 @@ namespace Home_Sewa
             services.AddControllers();
 
             services.AddDbContext<HomeSewaDbContext>(option => option.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HomeSewa;"));
-            
+
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo
@@ -40,6 +40,8 @@ namespace Home_Sewa
                     Description = "Sample service for Learner",
                 });
             });
+
+            services.AddControllersWithViews().AddNewtonsoftJson(options =>options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

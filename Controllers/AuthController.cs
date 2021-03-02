@@ -21,17 +21,10 @@ namespace Home_Sewa.Controllers
         }
 
         [HttpPost]
-        [Route("AuthorizeCustomer")]
-        public IActionResult AuthorizeCustomer([FromBody] AuthModel authModel)
+        [Route("AuthorizeUser")]
+        public IActionResult AuthorizeUser(AuthModel authModel)
         {
-            return Ok(_authService.AuthorizeCustomer(authModel));
+            return Ok(_authService.AuthorizeUser(authModel));
         } 
-
-        [HttpPost]
-        [Route("AuthorizeVendor")]
-        public IActionResult AuthorizeVendor([FromBody] AuthModel authModel)
-        {
-            return Ok(_authService.AuthorizeVendor(authModel));
-        }
     }
 }

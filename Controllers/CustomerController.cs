@@ -23,5 +23,11 @@ namespace Home_Sewa.Controllers
         {
             return Ok(customer_service.GetAllCustomer());
         }
+        /*[HttpPost]
+        public IActionResult Post() 
+        { 
+        
+        }*/
+
     }
 }

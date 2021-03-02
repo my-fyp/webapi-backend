@@ -1,4 +1,5 @@
 ﻿using Home_Sewa.Data;
+using Home_Sewa.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,8 +17,16 @@ namespace Home_Sewa.Service
         }
         internal object GetAllCustomer()
         {
-            return _dbContext.Customers;
-        } 
+            try
+            {
+                var result = _dbContext.Customers;
+                return Response.ApiResonse(true, "All Customers", result);
+            }
+            catch (Exception ex)
+            {
+                return Response.ApiResonse(false, "Failed to get data", ex.Message);
+            }
+        }
     }
 }
 

@@ -11,18 +11,23 @@ namespace Home_Sewa.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BookingController : ControllerBase
+    public class FavouriteController : ControllerBase
     {
-        private readonly BookingService bookingService;
-        public BookingController(HomeSewaDbContext DbContext)
+        public readonly FavouriteService favService;
+        public FavouriteController(HomeSewaDbContext DbContext)
         {
-            bookingService = new BookingService(DbContext);
+            favService = new FavouriteService(DbContext);
         }
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(bookingService.GetAllBooking());
+            return Ok(favService.GetAllFavourites());
+
         }
 
     }
 }
+
+
+
+

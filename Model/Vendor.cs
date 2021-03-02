@@ -11,7 +11,13 @@ namespace Home_Sewa.Model
         [Key]
         public int  VendorId { get; set; }
         [Required]
+        public string Username { get; set; }
+        [Required]
+        public string Password { get; set; }
+        [Required]
         public  string Name { get; set; }
+        [StringLength(10)]
+        public string PhoneNo { get; set; }
         [Required]
         public string Address { get; set; }
         [Required]

@@ -18,11 +18,11 @@ namespace Home_Sewa.Controllers
         {
            offerServices = new OffersService(dbContext);
         }
-          [HttpGet]
-            public IActionResult Get()
-            {
-                return Ok(offerServices.GetAllOffers());
-            }
+         [HttpGet]
+          public IActionResult Get()
+          {
+            return Ok(offerServices.GetAllOffers());
+          }
     }
 }
 

@@ -13,9 +13,13 @@ namespace Home_Sewa.Model
         public int ProblemId { get; set; }
         [ForeignKey("Customer")]
         public int CustomerId { get; set; }
+        [Required]
         public string Description { get; set; }
+        [Required]
         public string ProblemImage { get; set; }
+        [Required]
         public DateTime AddedDate { get; set; }
+        [Required]
         public bool Status { get; set; }
 
         public  virtual Customer Customers { get; set; }//every unique id customers will have different 

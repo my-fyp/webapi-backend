@@ -61,3 +61,8 @@ F:\MyFyp\backend\Home Sewa\obj\Debug\netcoreapp3.1\Home Sewa.csproj.CopyComplete
 F:\MyFyp\backend\Home Sewa\obj\Debug\netcoreapp3.1\Home Sewa.dll
 F:\MyFyp\backend\Home Sewa\obj\Debug\netcoreapp3.1\Home Sewa.pdb
 F:\MyFyp\backend\Home Sewa\obj\Debug\netcoreapp3.1\Home Sewa.genruntimeconfig.cache
+F:\MyFyp\backend\Home Sewa\obj\Debug\netcoreapp3.1\Home Sewa.MvcApplicationPartsAssemblyInfo.cs
+F:\MyFyp\backend\Home Sewa\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+F:\MyFyp\backend\Home Sewa\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+F:\MyFyp\backend\Home Sewa\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\MyFyp\backend\Home Sewa\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll

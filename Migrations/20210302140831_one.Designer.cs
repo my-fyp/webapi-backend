@@ -4,14 +4,16 @@ using Home_Sewa.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Home_Sewa.Migrations
 {
     [DbContext(typeof(HomeSewaDbContext))]
-    partial class HomeSewaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210302140831_one")]
+    partial class one
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -237,10 +239,6 @@ namespace Home_Sewa.Migrations
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNo")
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("ProfileImage")
                         .HasColumnType("nvarchar(max)");

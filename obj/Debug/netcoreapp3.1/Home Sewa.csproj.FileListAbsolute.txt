@@ -69,3 +69,74 @@ F:\MyFyp\backend\Home Sewa\obj\Debug\netcoreapp3.1\Home Sewa.csprojAssemblyRefer
 F:\MyFyp\backend\Home Sewa\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 F:\MyFyp\backend\Home Sewa\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 F:\MyFyp\backend\Home Sewa\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\Backend\webapi-backend\obj\Debug\netcoreapp3.1\Home Sewa.dll
+D:\Backend\webapi-backend\obj\Debug\netcoreapp3.1\Home Sewa.pdb
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Home Sewa.exe
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Home Sewa.deps.json
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Home Sewa.runtimeconfig.json
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Home Sewa.runtimeconfig.dev.json
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Home Sewa.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Home Sewa.pdb
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Humanizer.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Backend\webapi-backend\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Backend\webapi-backend\obj\Debug\netcoreapp3.1\Home Sewa.csprojAssemblyReference.cache
+D:\Backend\webapi-backend\obj\Debug\netcoreapp3.1\Home Sewa.AssemblyInfoInputs.cache
+D:\Backend\webapi-backend\obj\Debug\netcoreapp3.1\Home Sewa.AssemblyInfo.cs
+D:\Backend\webapi-backend\obj\Debug\netcoreapp3.1\Home Sewa.csproj.CoreCompileInputs.cache
+D:\Backend\webapi-backend\obj\Debug\netcoreapp3.1\Home Sewa.MvcApplicationPartsAssemblyInfo.cs
+D:\Backend\webapi-backend\obj\Debug\netcoreapp3.1\Home Sewa.MvcApplicationPartsAssemblyInfo.cache
+D:\Backend\webapi-backend\obj\Debug\netcoreapp3.1\staticwebassets\Home Sewa.StaticWebAssets.Manifest.cache
+D:\Backend\webapi-backend\obj\Debug\netcoreapp3.1\staticwebassets\Home Sewa.StaticWebAssets.xml
+D:\Backend\webapi-backend\obj\Debug\netcoreapp3.1\scopedcss\bundle\Home Sewa.styles.css
+D:\Backend\webapi-backend\obj\Debug\netcoreapp3.1\Home Sewa.RazorTargetAssemblyInfo.cache
+D:\Backend\webapi-backend\obj\Debug\netcoreapp3.1\Home Sewa.csproj.CopyComplete
+D:\Backend\webapi-backend\obj\Debug\netcoreapp3.1\Home Sewa.genruntimeconfig.cache

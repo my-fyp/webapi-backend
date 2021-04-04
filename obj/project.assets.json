@@ -5681,19 +5681,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\bibin\\.nuget\\packages\\": {}
+    "C:\\Users\\MSI\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\MyFyp\\backend\\Home Sewa\\Home Sewa.csproj",
+      "projectUniqueName": "D:\\Backend\\webapi-backend\\Home Sewa.csproj",
       "projectName": "Home Sewa",
-      "projectPath": "F:\\MyFyp\\backend\\Home Sewa\\Home Sewa.csproj",
-      "packagesPath": "C:\\Users\\bibin\\.nuget\\packages\\",
-      "outputPath": "F:\\MyFyp\\backend\\Home Sewa\\obj\\",
+      "projectPath": "D:\\Backend\\webapi-backend\\Home Sewa.csproj",
+      "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
+      "outputPath": "D:\\Backend\\webapi-backend\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\bibin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\MSI\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5764,7 +5764,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

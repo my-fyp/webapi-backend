@@ -1,4 +1,5 @@
 ﻿using Home_Sewa.Data;
+using Home_Sewa.Helper;
 using Home_Sewa.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -24,5 +25,30 @@ namespace Home_Sewa.Controllers
             return Ok(bookingService.GetAllBooking());
         }
 
+
+        [HttpPost]
+        [Route("MakeBookingRequest")]
+        public IActionResult MakeBookingRequest([FromBody] BookingRequest bookingRequest)
+        {
+            return Ok(bookingService.MakeBookingRequest(bookingRequest));
+        }
+
+        [HttpPatch]
+        [Route("UpdateBooking/{bookingId}")]
+        public IActionResult UpdateBooking(int bookingId,[FromBody] BookingRequest newDetails)
+        {
+            return Ok(bookingService.UpdateBooking(bookingId, newDetails));
+        }
+
+        [HttpDelete]
+        [Route("CancelBooking/{bookingId}")]
+        public IActionResult CancelBooking(int bookingId)
+        {
+            return Ok(bookingService.CancelBooking(bookingId));
+        }
     }
 }
+
+
+    
+

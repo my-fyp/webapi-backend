@@ -24,6 +24,8 @@ namespace Home_Sewa.Controllers
             return Ok(vendorServices.GetAllVendors());
            
         }
-    
+        /*[HttpPost]
+        [Route]
+    */
     }
 }

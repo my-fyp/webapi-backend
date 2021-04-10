@@ -15,6 +15,7 @@ namespace Home_Sewa.Model
         public int CustomerId { get; set; }
         [ForeignKey("Vendor")]
         public int VendorId { get; set; }
+        public DateTime CreatedAt { get; set; }
         public virtual Customer Customer { get; set; }
         public virtual Vendor Vendor { get; set; }
 

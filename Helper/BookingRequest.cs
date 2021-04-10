@@ -16,5 +16,6 @@ namespace Home_Sewa.Helper
         public double Discount { get; set; }
         public bool CompletedStatus { get; set; }
         public bool PaidStatus { get; set; }
+        public string BookedBy { get; set; }
     }
 }

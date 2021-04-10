@@ -56,16 +56,16 @@ namespace Home_Sewa.Service
                             c.User.UserType
                         }).Where(u => u.UserId == valid_user.UserId).FirstOrDefault();
                     }
-                    return Response.ApiResonse(true, "Logged in successful.", user_details);
+                    return Response.ApiResponse(true, "Logged in successful.", user_details);
                 }
                 else
                 {
-                    return Response.ApiResonse(false, "Invalid Creadentials", null);
+                    return Response.ApiResponse(false, "Invalid Creadentials", null);
                 }
             }
             catch (Exception ex)
             {
-                return Response.ApiResonse(false, "Something went wrong", ex.Message);
+                return Response.ApiResponse(false, "Something went wrong", ex.Message);
             }
         }
     }

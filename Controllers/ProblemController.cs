@@ -27,15 +27,27 @@ namespace Home_Sewa.Controllers
 
         }
         [HttpPost]
-        [Route("PostProblems")]
-
-        public IActionResult PostProblems([FromBody] ProblemRequests problemRequests)
+        [Route("PostProblemRequest")]
+        public IActionResult PostProblemRequest([FromBody] ProblemRequest problemRequest)
         {
-            return Ok();//problemService.PostProblems(problemRequests));
+            return Ok(problemService.PostProblem(problemRequest));
+        }
+
+        [HttpDelete]
+        [Route("DeleteProblem/{ProblemId}")]
+
+        public IActionResult DeleteProblem(int ProblemId) 
+        {
+            return Ok(problemService.DeleteProblem(ProblemId));
+
         }
         [HttpPatch]
-        [Route("UpdateProblems/{ProblemId}")]
+        [Route("UpdateProblem/{problemId}")]
+        public IActionResult UpdateProblem(int problemId, [FromBody] ProblemRequest newDetails)
+        {
+            return Ok(problemService.UpdateProblem(problemId, newDetails));
 
+        }
 
-    }
+}
 }

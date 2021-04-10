@@ -18,7 +18,7 @@ namespace Home_Sewa.Model
         [Required]
         public string ProblemImage { get; set; }
         [Required]
-        public DateTime AddedDate { get; set; }
+        public DateTime CreatedAt { get; set; }
         [Required]
         public bool Status { get; set; }
 

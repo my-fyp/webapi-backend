@@ -18,13 +18,24 @@ namespace Home_Sewa.Service
             _dbContext = Db;
 
         }
-        internal object GetAllBooking()
+        internal object GetAllBooking(int userId, string userType, bool completedStatus)
         {
-            return _dbContext.Bookings;
-        }
-        internal object BookingDetail()
-        {
-            return _dbContext.Bookings;
+            if (userType == Constants.CUSTOMER)
+            {
+                return _dbContext.Bookings
+                    .Where(b => b.CustomerId == userId && b.CompletedStatus == completedStatus)
+                    .OrderByDescending(d => d.ServiceDate);
+            }
+            else if (userType == Constants.VENDOR)
+            {
+                return _dbContext.Bookings
+                    .Where(b => (b.VendorId == userId || (b.CustomerId == userId && b.BookedBy == userType)) && b.CompletedStatus == completedStatus)
+                    .OrderByDescending(d => d.ServiceDate);
+            }
+            else
+            {
+                return "User not found";
+            }
         }
 
         internal object MakeBookingRequest(BookingRequest bookingRequest)
@@ -42,15 +53,16 @@ namespace Home_Sewa.Service
                     PaidStatus = bookingRequest.PaidStatus,
                     ServiceDate = bookingRequest.ServiceDate,
                     ServiceType = bookingRequest.ServiceType,
+                    BookedBy = bookingRequest.BookedBy,
                     ProblemDescription = bookingRequest.ProblemDescription
                 };
                 _dbContext.Bookings.Add(new_booking);
                 _dbContext.SaveChanges();
-                return Response.ApiResonse(true, "Booking Successful", new_booking);
+                return Response.ApiResponse(true, "Booking Successful", new_booking);
             }
             catch (Exception ex)
             {
-                return Response.ApiResonse(false, "Something went wrong", ex.Message);
+                return Response.ApiResponse(false, "Something went wrong", ex.Message);
             }
             throw new NotImplementedException();
         }
@@ -60,20 +72,20 @@ namespace Home_Sewa.Service
             try
             {
                 Booking booking = _dbContext.Bookings.Find(bookingId);
-                if(booking != null)
+                if (booking != null)
                 {
                     _dbContext.Bookings.Remove(booking);
                     _dbContext.SaveChanges();
-                    return Response.ApiResonse(true, "Booking Canceled", booking);
+                    return Response.ApiResponse(true, "Booking Canceled", booking);
                 }
                 else
                 {
-                    return Response.ApiResonse(false, "Booking not found", null);
+                    return Response.ApiResponse(false, "Booking not found", null);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                return Response.ApiResonse(false, "Something went wrong", ex.Message);
+                return Response.ApiResponse(false, "Something went wrong", ex.Message);
             }
             throw new NotImplementedException();
         }
@@ -94,16 +106,16 @@ namespace Home_Sewa.Service
                     old_booking.ProblemDescription = newDetails.ProblemDescription;
                     _dbContext.Entry(old_booking).State = EntityState.Modified;
                     _dbContext.SaveChanges();
-                    return Response.ApiResonse(true, "Booking updated successfully.", old_booking);
+                    return Response.ApiResponse(true, "Booking updated successfully.", old_booking);
                 }
                 else
                 {
-                    return Response.ApiResonse(false, "No bookings found", null);
+                    return Response.ApiResponse(false, "No bookings found", null);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                return Response.ApiResonse(false, "Something went wrong", ex.Message);
+                return Response.ApiResponse(false, "Something went wrong", ex.Message);
             }
             throw new NotImplementedException();
         }

@@ -1,4 +1,5 @@
 ﻿using Home_Sewa.Data;
+using Home_Sewa.Helper;
 using Home_Sewa.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,13 +17,32 @@ namespace Home_Sewa.Controllers
         private readonly OffersService offerServices;
         public OffersController(HomeSewaDbContext dbContext)
         {
-           offerServices = new OffersService(dbContext);
+            offerServices = new OffersService(dbContext);
         }
-         [HttpGet]
-          public IActionResult Get()
-          {
+        [HttpGet]
+        public IActionResult Get()
+        {
             return Ok(offerServices.GetAllOffers());
-          }
+        }
+        [HttpPost]
+        public IActionResult PostOffers([FromBody] OfferRequest offerRequest)
+        {
+            return Ok(offerServices.PostOffers(offerRequest));
+        }
+        [HttpDelete]
+        [Route("DeleteOffer/{OfferId}")]
+        public IActionResult DeleteOffer(int OfferId)
+        {
+            return Ok(offerServices.DeleteOffer(OfferId));
+        }
+        [HttpPatch]
+        [Route("UpdateOffer/{OfferId}")]
+
+        public IActionResult UpdateOffer(int OfferId, [FromBody] OfferRequest newDetails)
+        {
+            return Ok(offerServices.UpdateOffer(OfferId, newDetails));
+        }
+
     }
 }
 

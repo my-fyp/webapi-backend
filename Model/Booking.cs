@@ -23,6 +23,7 @@ namespace Home_Sewa.Model
         public double Discount { get; set; }
         public bool CompletedStatus { get; set; }
         public bool PaidStatus { get; set; }
+        public string BookedBy { get; set; }
 
         public virtual Customer Customer { get; set; }
         public virtual Vendor Vendor { get; set; }

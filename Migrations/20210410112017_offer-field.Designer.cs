@@ -4,14 +4,16 @@ using Home_Sewa.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Home_Sewa.Migrations
 {
     [DbContext(typeof(HomeSewaDbContext))]
-    partial class HomeSewaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210410112017_offer-field")]
+    partial class offerfield
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,9 +27,6 @@ namespace Home_Sewa.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("BookedBy")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("BookingDate")
                         .HasColumnType("datetime2");
@@ -113,9 +112,6 @@ namespace Home_Sewa.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
@@ -167,7 +163,7 @@ namespace Home_Sewa.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTime>("AddedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("CustomerId")

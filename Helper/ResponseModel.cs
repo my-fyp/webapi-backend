@@ -14,7 +14,7 @@ namespace Home_Sewa.Helper
 
     public class Response
     {
-        public static ResponseModel ApiResonse(bool status, string message, dynamic result)
+        public static ResponseModel ApiResponse(bool status, string message, dynamic result)
         {
             return new ResponseModel
             {

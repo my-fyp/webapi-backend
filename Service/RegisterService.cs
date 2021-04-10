@@ -88,16 +88,16 @@ namespace Home_Sewa.Service
                         .Where(u => u.UserId == new_user.UserId)
                         .FirstOrDefault();
                     }
-                    return Response.ApiResonse(true, "Logged in successful.", user_details);
+                    return Response.ApiResponse(true, "Logged in successful.", user_details);
                 }
                 else
                 {
-                    return Response.ApiResonse(false, "User already exists", null);
+                    return Response.ApiResponse(false, "User already exists", null);
                 }
             }
             catch (Exception ex)
             {
-                return Response.ApiResonse(false, "Something went wrong.", ex);
+                return Response.ApiResponse(false, "Something went wrong.", ex);
             }
         }
     }

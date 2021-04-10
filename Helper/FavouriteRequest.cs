@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 
 namespace Home_Sewa.Helper
 {
-    public class ProblemRequests
+    public class FavouriteRequest
     {
+        public int CustomerId { get; set; }
+        public int VendorId { get; set; }
     }
 }

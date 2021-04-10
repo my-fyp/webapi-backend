@@ -20,11 +20,11 @@ namespace Home_Sewa.Service
             try
             {
                 var result = _dbContext.Customers;
-                return Response.ApiResonse(true, "All Customers", result);
+                return Response.ApiResponse(true, "All Customers", result);
             }
             catch (Exception ex)
             {
-                return Response.ApiResonse(false, "Failed to get data", ex.Message);
+                return Response.ApiResponse(false, "Failed to get data", ex.Message);
             }
         }
     }

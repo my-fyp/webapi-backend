@@ -20,9 +20,10 @@ namespace Home_Sewa.Controllers
             bookingService = new BookingService(DbContext);
         }
         [HttpGet]
-        public IActionResult Get()
+        [Route("GetBookings/{userId}/{userType}/{completedStatus}")]
+        public IActionResult GetBookings(int userId, string userType, bool completedStatus)
         {
-            return Ok(bookingService.GetAllBooking());
+            return Ok(bookingService.GetAllBooking(userId, userType, completedStatus));
         }
 
 

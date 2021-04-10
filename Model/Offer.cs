@@ -15,6 +15,8 @@ namespace Home_Sewa.Model
         public int VendorId { get; set; }
         public DateTime ValidDate { get; set; }
         public string OfferImage { get; set; }
+        public string Description { get; set; }
+        public DateTime CreatedAt { get; set; }
 
         public virtual Vendor Vendor { get; set; }
     }

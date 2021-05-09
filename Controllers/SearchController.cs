@@ -18,5 +18,18 @@ namespace Home_Sewa.Controllers
         {
             _searchService = new SearchService(dbContext);
         }
+
+        [HttpGet]
+        public IActionResult Get(string searchItem)
+        {
+            return Ok(_searchService.GetSearvices(searchItem));
+        }
+
+        [HttpGet]
+        [Route("GetSpecialist/{slug}")]
+        public IActionResult GetSpecialist(string slug)
+        {
+            return Ok(_searchService.GetSpecialist(slug));
+        }
     }
 }

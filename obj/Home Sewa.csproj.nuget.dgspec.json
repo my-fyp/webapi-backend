@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Backend\\webapi-backend\\Home Sewa.csproj": {}
+    "C:\\SisterProject\\webapi-backend\\Home Sewa.csproj": {}
   },
   "projects": {
-    "D:\\Backend\\webapi-backend\\Home Sewa.csproj": {
+    "C:\\SisterProject\\webapi-backend\\Home Sewa.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Backend\\webapi-backend\\Home Sewa.csproj",
+        "projectUniqueName": "C:\\SisterProject\\webapi-backend\\Home Sewa.csproj",
         "projectName": "Home Sewa",
-        "projectPath": "D:\\Backend\\webapi-backend\\Home Sewa.csproj",
-        "packagesPath": "C:\\Users\\MSI\\.nuget\\packages\\",
-        "outputPath": "D:\\Backend\\webapi-backend\\obj\\",
+        "projectPath": "C:\\SisterProject\\webapi-backend\\Home Sewa.csproj",
+        "packagesPath": "C:\\Users\\Prachan Ghale\\.nuget\\packages\\",
+        "outputPath": "C:\\SisterProject\\webapi-backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\MSI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Prachan Ghale\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

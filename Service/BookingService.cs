@@ -153,6 +153,7 @@ namespace Home_Sewa.Service
                     PaidStatus = bookingRequest.PaidStatus,
                     ServiceDate = bookingRequest.ServiceDate,
                     ServiceType = bookingRequest.ServiceType,
+                    ServiceAddress = bookingRequest.ServiceAddress,
                     BookedBy = bookingRequest.BookedBy,
                     ProblemDescription = bookingRequest.ProblemDescription
                 };

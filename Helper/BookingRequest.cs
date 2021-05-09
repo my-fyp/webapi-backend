@@ -11,6 +11,7 @@ namespace Home_Sewa.Helper
         public int VendorId { get; set; }
         public DateTime ServiceDate { get; set; }
         public string ProblemDescription { get; set; }
+        public string ServiceAddress { get; set; }
         public string ServiceType { get; set; }
         public double TotalPrice { get; set; }
         public double Discount { get; set; }

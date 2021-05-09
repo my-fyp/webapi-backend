@@ -17,6 +17,7 @@ namespace Home_Sewa.Data
         public DbSet<Problem> Problems { get; set; }
         public DbSet<Favourite> Favourites { get; set; }
         public DbSet<Booking> Bookings { get; set; }
+        public DbSet<Profession> Professions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder _modelBuilder)
         {

@@ -18,12 +18,14 @@ namespace Home_Sewa.Model
         public DateTime BookingDate { get; set; }
         public DateTime ServiceDate { get; set; }
         public string ProblemDescription { get; set; }
+        public string ServiceAddress { get; set; }
         public string ServiceType { get; set; }
         public double TotalPrice { get; set; }
         public double Discount { get; set; }
         public bool CompletedStatus { get; set; }
         public bool PaidStatus { get; set; }
         public string BookedBy { get; set; }
+        public bool IsAccepted { get; set; }
 
         public virtual Customer Customer { get; set; }
         public virtual Vendor Vendor { get; set; }

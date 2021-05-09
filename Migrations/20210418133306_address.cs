@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Home_Sewa.Migrations
 {
-    public partial class usertable3 : Migration
+    public partial class address : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -46,7 +46,7 @@ namespace Home_Sewa.Migrations
                     Gender = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhoneNo = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    ProfileImage = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ProfileImage = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -92,7 +92,7 @@ namespace Home_Sewa.Migrations
                     CustomerId = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ProblemImage = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AddedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -117,11 +117,14 @@ namespace Home_Sewa.Migrations
                     BookingDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ServiceDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ProblemDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ServiceAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ServiceType = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     TotalPrice = table.Column<double>(type: "float", nullable: false),
                     Discount = table.Column<double>(type: "float", nullable: false),
                     CompletedStatus = table.Column<bool>(type: "bit", nullable: false),
-                    PaidStatus = table.Column<bool>(type: "bit", nullable: false)
+                    PaidStatus = table.Column<bool>(type: "bit", nullable: false),
+                    BookedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsAccepted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -147,7 +150,8 @@ namespace Home_Sewa.Migrations
                     FavouriteId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CustomerId = table.Column<int>(type: "int", nullable: false),
-                    VendorId = table.Column<int>(type: "int", nullable: false)
+                    VendorId = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -174,7 +178,9 @@ namespace Home_Sewa.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     VendorId = table.Column<int>(type: "int", nullable: false),
                     ValidDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    OfferImage = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    OfferImage = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {

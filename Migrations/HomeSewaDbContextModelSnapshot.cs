@@ -41,10 +41,16 @@ namespace Home_Sewa.Migrations
                     b.Property<double>("Discount")
                         .HasColumnType("float");
 
+                    b.Property<bool>("IsAccepted")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("PaidStatus")
                         .HasColumnType("bit");
 
                     b.Property<string>("ProblemDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ServiceAddress")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("ServiceDate")
@@ -199,6 +205,12 @@ namespace Home_Sewa.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ProfessionName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ServiceIcon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Slug")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ProfessionId");

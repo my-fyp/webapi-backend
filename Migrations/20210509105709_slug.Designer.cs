@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Home_Sewa.Migrations
 {
     [DbContext(typeof(HomeSewaDbContext))]
-    [Migration("20210328141006_new_one")]
-    partial class new_one
+    [Migration("20210509105709_slug")]
+    partial class slug
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,6 +28,9 @@ namespace Home_Sewa.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("BookedBy")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("BookingDate")
                         .HasColumnType("datetime2");
 
@@ -40,10 +43,16 @@ namespace Home_Sewa.Migrations
                     b.Property<double>("Discount")
                         .HasColumnType("float");
 
+                    b.Property<bool>("IsAccepted")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("PaidStatus")
                         .HasColumnType("bit");
 
                     b.Property<string>("ProblemDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ServiceAddress")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("ServiceDate")
@@ -112,6 +121,9 @@ namespace Home_Sewa.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
@@ -133,6 +145,12 @@ namespace Home_Sewa.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("OfferImage")
                         .HasColumnType("nvarchar(max)");
@@ -157,7 +175,7 @@ namespace Home_Sewa.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("AddedDate")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("CustomerId")
@@ -189,6 +207,12 @@ namespace Home_Sewa.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ProfessionName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ServiceIcon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Slug")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ProfessionId");

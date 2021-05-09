@@ -18,7 +18,20 @@ namespace Home_Sewa.Service
         }
         internal object GetAllProblems()
         {
-            return _dbContext.Problems.Where(p => p.Status == false).OrderByDescending(d => d.CreatedAt);
+            return _dbContext.Problems.
+                Where(p => p.Status == false)
+                .OrderByDescending(d => d.CreatedAt).
+                Select(b => new
+                {
+                  b.ProblemId,
+                  b.ProblemImage,
+                  b.Description,
+                  b.CreatedAt,
+                  b.CustomerId,
+                  b.Customers.Name,
+                  b.Customers.PhoneNo,
+                  b.Customers.ProfileImage
+                });
         }
         internal object PostProblem(ProblemRequest problemRequest)
         {

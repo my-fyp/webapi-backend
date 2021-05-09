@@ -20,7 +20,19 @@ namespace Home_Sewa.Service
         {
             return _dbContext.Offers
                 .Where(o => o.ValidDate > DateTime.Now)
-                .OrderByDescending(d => d.CreatedAt);
+                .OrderByDescending(d => d.CreatedAt)
+                .Select(s => new
+                {
+                    s.OfferId,
+                    s.OfferImage,
+                    s.Description,
+                    s.CreatedAt,
+                    s.ValidDate,
+                    s.VendorId,
+                    s.Vendor.Name,
+                    s.Vendor.PhoneNo,
+                    s.Vendor.ProfileImage
+                });
         }
 
         internal object PostOffers(OfferRequest offerRequest)

@@ -24,13 +24,113 @@ namespace Home_Sewa.Service
             {
                 return _dbContext.Bookings
                     .Where(b => b.CustomerId == userId && b.CompletedStatus == completedStatus)
-                    .OrderByDescending(d => d.ServiceDate);
+                    .OrderByDescending(d => d.ServiceDate)
+                    .Select(u => new
+                    {
+                        u.BookingId,
+                        u.BookingDate,
+                        u.ServiceDate,
+                        u.ProblemDescription,
+                        u.ServiceType,
+                        u.ServiceAddress,
+                        u.BookedBy,
+                        u.IsAccepted,
+                        u.Vendor.VendorId,
+                        VendorName = u.Vendor.Name,
+                        VendorImage = u.Vendor.ProfileImage,
+                        VendorContact = u.Vendor.PhoneNo,
+                        u.Customer.CustomerId,
+                        CustomerName = u.Customer.Name,
+                        CustomerImage = u.Customer.ProfileImage,
+                        CustomerContact = u.Customer.PhoneNo,
+
+                    });
             }
             else if (userType == Constants.VENDOR)
             {
                 return _dbContext.Bookings
                     .Where(b => (b.VendorId == userId || (b.CustomerId == userId && b.BookedBy == userType)) && b.CompletedStatus == completedStatus)
-                    .OrderByDescending(d => d.ServiceDate);
+                    .OrderByDescending(d => d.ServiceDate)
+                    .Select(u => new
+                    {
+                        u.BookingId,
+                        u.BookingDate,
+                        u.ServiceDate,
+                        u.ProblemDescription,
+                        u.ServiceType,
+                        u.ServiceAddress,
+                        u.BookedBy,
+                        u.IsAccepted,
+                        u.Vendor.VendorId,
+                        VendorName = u.Vendor.Name,
+                        VendorImage = u.Vendor.ProfileImage,
+                        VendorContact = u.Vendor.PhoneNo,
+                        u.Customer.CustomerId,
+                        CustomerName = u.Customer.Name,
+                        CustomerImage = u.Customer.ProfileImage,
+                        CustomerContact = u.Customer.PhoneNo,
+
+                    });
+            }
+            else
+            {
+                return "User not found";
+            }
+        }
+
+        internal object GetBookingRequests(int userId, string userType)
+        {
+            if (userType == Constants.CUSTOMER)
+            {
+                return _dbContext.Bookings
+                    .Where(b => b.CustomerId == userId && b.IsAccepted == false)
+                    .OrderByDescending(d => d.ServiceDate)
+                     .Select(u => new
+                     {
+                         u.BookingId,
+                         u.BookingDate,
+                         u.ServiceDate,
+                         u.ProblemDescription,
+                         u.ServiceType,
+                         u.BookedBy,
+                         u.IsAccepted,
+                         u.ServiceAddress,
+                         u.Vendor.VendorId,
+                         VendorName = u.Vendor.Name,
+                         VendorImage = u.Vendor.ProfileImage,
+                         VendorContact = u.Vendor.PhoneNo,
+                         u.Customer.CustomerId,
+                         CustomerName = u.Customer.Name,
+                         CustomerImage = u.Customer.ProfileImage,
+                         CustomerContact = u.Customer.PhoneNo,
+
+                     });
+            }
+            else if (userType == Constants.VENDOR)
+            {
+                return _dbContext.Bookings
+                    .Where(b => (b.VendorId == userId || (b.CustomerId == userId && b.BookedBy == userType)) && b.IsAccepted == false)
+                    .OrderByDescending(d => d.ServiceDate)
+                     .Select(u => new
+                     {
+                         u.BookingId,
+                         u.BookingDate,
+                         u.ServiceDate,
+                         u.ProblemDescription,
+                         u.ServiceType,
+                         u.ServiceAddress,
+                         u.BookedBy,
+                         u.IsAccepted,
+                         u.Vendor.VendorId,
+                         VendorName = u.Vendor.Name,
+                         VendorImage = u.Vendor.ProfileImage,
+                         VendorContact = u.Vendor.PhoneNo,
+                         u.Customer.CustomerId,
+                         CustomerName = u.Customer.Name,
+                         CustomerImage = u.Customer.ProfileImage,
+                         CustomerContact = u.Customer.PhoneNo,
+
+                     });
             }
             else
             {

@@ -38,6 +38,7 @@ namespace Home_Sewa.Service
                         {
                             c.User.Username,
                             c.UserId,
+                            AccessId = c.CustomerId,
                             c.Name,
                             c.PhoneNo,
                             c.Address,
@@ -50,6 +51,7 @@ namespace Home_Sewa.Service
                         {
                             c.User.Username,
                             c.UserId,
+                            AccessId = c.VendorId,
                             c.Name,
                             c.PhoneNo,
                             c.Address,

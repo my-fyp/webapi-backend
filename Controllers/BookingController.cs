@@ -25,6 +25,13 @@ namespace Home_Sewa.Controllers
         {
             return Ok(bookingService.GetAllBooking(userId, userType, completedStatus));
         }
+        
+        [HttpGet]
+        [Route("GetBookingRequests/{userId}/{userType}")]
+        public IActionResult GetBookingRequests(int userId, string userType)
+        {
+            return Ok(bookingService.GetBookingRequests(userId, userType));
+        }
 
 
         [HttpPost]
@@ -36,7 +43,7 @@ namespace Home_Sewa.Controllers
 
         [HttpPatch]
         [Route("UpdateBooking/{bookingId}")]
-        public IActionResult UpdateBooking(int bookingId,[FromBody] BookingRequest newDetails)
+        public IActionResult UpdateBooking(int bookingId, [FromBody] BookingRequest newDetails)
         {
             return Ok(bookingService.UpdateBooking(bookingId, newDetails));
         }
@@ -51,5 +58,5 @@ namespace Home_Sewa.Controllers
 }
 
 
-    
+
 

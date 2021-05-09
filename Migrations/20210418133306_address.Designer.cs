@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Home_Sewa.Migrations
 {
     [DbContext(typeof(HomeSewaDbContext))]
-    [Migration("20210410122111_bookedby-added")]
-    partial class bookedbyadded
+    [Migration("20210418133306_address")]
+    partial class address
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,10 +43,16 @@ namespace Home_Sewa.Migrations
                     b.Property<double>("Discount")
                         .HasColumnType("float");
 
+                    b.Property<bool>("IsAccepted")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("PaidStatus")
                         .HasColumnType("bit");
 
                     b.Property<string>("ProblemDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ServiceAddress")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("ServiceDate")
